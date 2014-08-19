@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <string name="edittext_hint_placeholder">"input input "</string>
-    <string name="btn_text_placeholder">click click </string>
-    <string name="activity_input_dialog_placeholder_label">输入输入啦</string>
-</resources>

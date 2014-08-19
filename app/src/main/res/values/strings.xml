@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">BiuNote</string>
+    <string name="act_notes_list_label_placeholder">listview act label placeholder</string>
+</resources>

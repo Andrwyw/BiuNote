@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--输入对话框-->
+    <string name="act_input_dialog_edittext_hint_placeholder">"input input "</string>
+    <string name="act_input_dialog_btn_text_placeholder">click click </string>
+    <string name="activity_input_dialog_placeholder_label">输入输入啦</string>
+
+    <!--notes list-->
+    <string name="listview_item_notes_tv_content_test">"content contentcontent"</string>;
+    <string name="listview_item_notes_tv_created_test">"2014-02-15 14:22:33"</string>;
+
+
+</resources>
