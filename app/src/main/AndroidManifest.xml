@@ -21,11 +21,25 @@
             android:label="@string/act_notes_list_label_placeholder">
 
             <intent-filter>
-                <category android:name="android.intent.category.DEFAULT"/>
-                <action android:name="android.intent.action.wyw.biunote.noteslist"/>
+                <category android:name="android.intent.category.DEFAULT" />
+                <action android:name="android.intent.action.wyw.biunote.noteslist" />
             </intent-filter>
 
         </activity>
+
+        <service
+            android:name=".service.RootViewDisplayService"
+            android:label="@string/label_displayservice"
+            android:exported="false">
+
+            <intent-filter android:priority="1000">
+                <action android:name="com.biutnote.wyw.action.displayservice.start"/>
+            </intent-filter>
+            <intent-filter android:priority="1000">
+                <action android:name="com.biutnote.wyw.action.displayservice.end"/>
+            </intent-filter>
+
+        </service>
 
     </application>
 
