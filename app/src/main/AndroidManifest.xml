@@ -1,7 +1,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.biunote.wyw.biunote">
 
+    
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
     <application
+        android:name=".base.BiuNoteApplication"
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
@@ -28,7 +31,7 @@
         </activity>
 
         <service
-            android:name=".service.RootViewDisplayService"
+            android:name=".service.AssistiveViewDisplayService"
             android:label="@string/label_displayservice"
             android:exported="false">
 

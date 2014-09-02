@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <EditText
+        android:id="@+id/edittext_note"
+        android:layout_width="@dimen/view_touch_dot_layout_edittext_width"
+        android:layout_height="@dimen/view_touch_dot_layout_edittext_height"
+        android:layout_centerHorizontal="true"
+        android:background="@android:color/holo_blue_light" />
+
+    <!--取消按钮-->
+    <Button
+        android:id="@+id/btn_close"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_alignBottom="@id/edittext_note"
+        android:layout_marginLeft="5dp"
+        android:layout_toRightOf="@id/edittext_note"
+        android:background="@drawable/round_button"
+        android:padding="1dp"
+        android:text="@string/view_dialog_close_btn_text"
+        android:textColor="@android:color/holo_blue_dark" />
+
+    <!--保存按钮-->
+    <Button
+        android:id="@+id/btn_save"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_above="@id/btn_close"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="5dp"
+        android:layout_toRightOf="@id/edittext_note"
+        android:background="@drawable/round_button"
+        android:padding="3dp"
+        android:text="@string/view_dialog_btn_save_text"
+        android:textColor="@android:color/holo_blue_dark" />
+</RelativeLayout>

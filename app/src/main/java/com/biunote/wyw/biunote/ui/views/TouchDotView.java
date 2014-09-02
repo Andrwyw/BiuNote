@@ -28,7 +28,7 @@ public class TouchDotView extends LinearLayout{
 
     private void init() {
         mGestureDetector = new GestureDetector(mContext,mOnGestureListener);
-        inflate(mContext, R.layout.view_touch_dot_view_layout, null);
+        inflate(mContext, R.layout.view_touch_dot_view_layout, this);
         mDotImgView = (ImageView) findViewById(R.id.img_dot);
     }
 
@@ -78,7 +78,6 @@ public class TouchDotView extends LinearLayout{
                 int y = (int) (event.getRawY() - h);
                 mOnTouchDotViewlistener.onTouchUp(this, x,y);
             }
-
         }
 
         return result;

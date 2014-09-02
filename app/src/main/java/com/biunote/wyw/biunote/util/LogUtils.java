@@ -9,7 +9,7 @@ public class LogUtils {
 	private static final String LOG_PREFIX = "bn_";
 	private static final int LOG_PREFIX_LENGTH = LOG_PREFIX.length();
 
-	// IllegalArgumentException - is thrown if the tag.length() > 23.
+	// IllegalArgumentException is thrown if the tag.length() > 23.
 	private static final int MAX_LOG_TAG_LENGTH = 23;
 
 	public static String makeLogTag(String str) {
@@ -31,8 +31,8 @@ public class LogUtils {
 	}
 
     /**
-     *
-     * adb shell setprop log.tag.<TAGNAME> VERBOSE or SystemProperties.set(PROPERTY_TAG, "VERBOSE");
+     * After executing cmd adb shell setprop log.tag.<TAGNAME> VERBOSE
+     * or SystemProperties.set(PROPERTY_TAG, "VERBOSE"), Log.isLoggable will return true;
      *
      * @param tag
      * @param message
