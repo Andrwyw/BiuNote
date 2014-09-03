@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.WindowManager;
 import android.view.WindowManager.LayoutParams;
 
+import com.biunote.wyw.biunote.database.dao.NoteEntryDataSource;
 import com.biunote.wyw.biunote.ui.views.AssistiveDialogView;
 import com.biunote.wyw.biunote.ui.views.TouchDotView;
 import com.biunote.wyw.biunote.util.L;
@@ -47,12 +48,13 @@ public class AssistiveTouchViewHelper {
 
     private AssistiveTouchViewHelper(Context context) {
         mContext = context;
-        mTouchDotParams = new WindowManager.LayoutParams();
+
         mWindowManager = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
         setupLayoutParams();
     }
 
     private void setupLayoutParams() {
+        mTouchDotParams = new WindowManager.LayoutParams();
         mTouchDotParams.type = LayoutParams.TYPE_PRIORITY_PHONE;
         mTouchDotParams.format = PixelFormat.RGBA_8888;
         //LayoutParams.FLAG_NOT_TOUCH_MODAL|  <-  FLAG_NOT_FOCUSABLE enable the left.
@@ -64,9 +66,10 @@ public class AssistiveTouchViewHelper {
         mTouchDotParams.width = LayoutParams.WRAP_CONTENT;
         mTouchDotParams.height = LayoutParams.WRAP_CONTENT;
 
+        mDialogViewParams = new WindowManager.LayoutParams();
         mDialogViewParams.type = LayoutParams.TYPE_PRIORITY_PHONE;
         mDialogViewParams.format = PixelFormat.RGBA_8888;
-        mDialogViewParams.flags = LayoutParams.FLAG_NOT_FOCUSABLE;
+        mDialogViewParams.flags = LayoutParams.FLAG_NOT_TOUCH_MODAL;
         mDialogViewParams.gravity = Gravity.CENTER;
         mDialogViewParams.width = LayoutParams.WRAP_CONTENT;
         mDialogViewParams.height = LayoutParams.WRAP_CONTENT;
@@ -101,7 +104,7 @@ public class AssistiveTouchViewHelper {
         if (mCurrentShowingType == ASSISTIVE_TOUCH_VIEW_TYPE_DIALOG){
             return;
         }else if(mCurrentShowingType == ASSISTIVE_TOUCH_VIEW_TYPE_DOT){
-            mWindowManager.removeView(mDialogView);
+            mWindowManager.removeView(mTouchDotView);
         }
 
         mWindowManager.addView(mDialogView,mDialogViewParams);
@@ -119,9 +122,17 @@ public class AssistiveTouchViewHelper {
             @Override
             public void onSaveBtnClicked(String msgToSave) {
                 L.toast(mContext,msgToSave);
+                addToDb(msgToSave);
                 showTouchDotView();
             }
         });
+    }
+
+    private void addToDb(String msgToSave) {
+        NoteEntryDataSource dataSource = new NoteEntryDataSource(mContext);
+        dataSource.open();
+        dataSource.addNoteEntry(msgToSave);
+        dataSource.close();
     }
 
     private void createTouchDotView() {
