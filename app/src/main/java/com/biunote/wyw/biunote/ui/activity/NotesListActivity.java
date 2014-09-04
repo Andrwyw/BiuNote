@@ -10,6 +10,8 @@ import com.biunote.wyw.biunote.base.BaseActivity;
 import com.biunote.wyw.biunote.database.dao.NoteEntryDataSource;
 import com.biunote.wyw.biunote.model.NoteEntryModel;
 import com.biunote.wyw.biunote.ui.adapter.NotesListAdapter;
+import com.nhaarman.listviewanimations.appearance.simple.ScaleInAnimationAdapter;
+import com.nhaarman.listviewanimations.appearance.simple.SwingRightInAnimationAdapter;
 
 import java.util.List;
 
@@ -30,7 +32,15 @@ public class NotesListActivity extends BaseActivity {
         List<NoteEntryModel> allNoteEntries = dataSource.getAllNoteEntries();
         dataSource.close();
 
-        listView.setAdapter(new NotesListAdapter(this,allNoteEntries));
+        NotesListAdapter notesListAdapter = new NotesListAdapter(this, allNoteEntries);
+        ScaleInAnimationAdapter scaleInAnimationAdapter = new ScaleInAnimationAdapter(notesListAdapter);
+
+        SwingRightInAnimationAdapter rightInAnimationAdapter = new SwingRightInAnimationAdapter(scaleInAnimationAdapter);
+        rightInAnimationAdapter.setAbsListView(listView);
+
+//        AlphaInAnimationAdapter alphaInAnimationAdapter = new AlphaInAnimationAdapter(scaleInAnimationAdapter);
+//        alphaInAnimationAdapter.setAbsListView(listView);
+        listView.setAdapter(rightInAnimationAdapter);
     }
 
 

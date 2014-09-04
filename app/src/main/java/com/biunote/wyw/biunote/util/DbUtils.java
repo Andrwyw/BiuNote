@@ -10,7 +10,6 @@ public class DbUtils {
     public static String getString(Cursor cursor,String columnName){
         int columnIndex = cursor.getColumnIndex(columnName);
         String cursorString = cursor.getString(columnIndex);
-
         return cursorString;
     }
 
