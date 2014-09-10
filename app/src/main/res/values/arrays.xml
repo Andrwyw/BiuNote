@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="grident_color_array">
+        <item>#348F50</item>
+        <item>#56B4D3</item>
+
+        <item>#3CA55C</item>
+        <item>#B5AC49</item>
+
+        <item>#003973</item>
+        <item>#E5E5BE</item>
+
+        <item>#E55D87</item>
+        <item>#5FC3E4</item>
+
+        <item>#403B4A</item>
+        <item>#E7E9BB</item>
+    </array>
+</resources>

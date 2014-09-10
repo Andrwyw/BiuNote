@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="cyan500">#00bcd4</color>
+
+    <color name="black">#ff000000</color>
+    <color name="white">#ffffffff</color>
+
+    <color name="mainTextWhiteColor">#ddffffff</color><!--87%-->
+    <color name="secondaryTextWhiteColor">#8affffff</color><!--54%-->
+
+    <color name="mainTextBlackColor">#dd000000</color><!--87%-->
+    <color name="secondaryTextBlackColor">#8a000000</color><!--54%-->
+
+    <color name="redA100">#ff7997</color>
+
+</resources>

@@ -2,6 +2,6 @@
     <string name="app_name">BiuNote</string>
     <string name="act_notes_list_label_placeholder">listview act label placeholder</string>
     <string name="label_displayservice">rootview display service</string>
-    <string name="view_dialog_close_btn_text">Close</string>
+    <string name="view_dialog_close_btn_text">cancel</string>
     <string name="view_dialog_btn_save_text">Save</string>
 </resources>
